@@ -15,7 +15,6 @@ class Calculator {
 	delete() {}
 
 	appendNumber(number) {
-		console.log("here")
 		if(number === '.' && this.currentOperand.includes('.')) return 
 		this.currentOperand = ( this.currentOperand.toString() + number.toString() )
 	}
@@ -64,13 +63,13 @@ class Calculator {
 	}
 }
 
-const numberButtons				= document.querySelectorAll('[data-number]')
-const operationButtons 			= document.querySelectorAll('[data-operation]')
-const equalsButton 				= document.querySelector('[data-equals]')
-const deleteButton				= document.querySelector('[data-delete]')
-const allClearButton			= document.querySelector('[data-all-clear]')
+const numberButtons				 = document.querySelectorAll('[data-number]')
+const operationButtons 			 = document.querySelectorAll('[data-operation]')
+const equalsButton 				 = document.querySelector('[data-equals]')
+const deleteButton				 = document.querySelector('[data-delete]')
+const allClearButton			 = document.querySelector('[data-all-clear]')
 const previousOeprandTextElement = document.querySelector('[data-previous-operand]')
-const currentOperandTextElement = document.querySelector('[data-current-operad]')
+const currentOperandTextElement  = document.querySelector('[data-current-operad]')
 
 const calculator = new Calculator(previousOeprandTextElement, currentOperandTextElement)
 
@@ -83,7 +82,7 @@ numberButtons.forEach(button => {
 
 operationButtons.forEach(button => {
 	button.addEventListener('click', () => {
-		calculator.appendNumber(button.innerText)
+		calculator.chooseOperationFunction(button.innerText)
 		calculator.UpdateDisplay()
 	})
 })
