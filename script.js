@@ -1,4 +1,3 @@
-
 class Calculator {
 	constructor(previousOeprandTextElement, currentOperandTextElement){
 		this.previousOeprandTextElement = previousOeprandTextElement
@@ -60,6 +59,8 @@ class Calculator {
 	UpdateDisplay() {
 		this.currentOperandTextElement.innerText = this.currentOperand
 		this.previousOeprandTextElement.innerText = this.previousOperand
+		/*this.previousOeprandTextElement.innerText = 
+				`${this..previousOperand)} ${this.operation}`*/
 	}
 }
 
